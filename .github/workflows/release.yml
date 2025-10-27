@@ -1,0 +1,18 @@
+name: Release
+
+# Trigger on tag push
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Release step
+        run: echo "Release triggered for $GITHUB_REF"
